@@ -16,7 +16,11 @@ async function main() {
   // We get the contract to deploy
   const Greeter = await hre.ethers.getContractFactory("Greeter");
   const greeter = await Greeter.deploy("Hello, Hardhat!", {
-    gasLimit: 120000000,
+
+    // tx.gasLimit = 468370000 and tx.gasPrice = 15000000"}}\n',
+
+    gasLimit: 468370000,
+    gasPrice: 15000000,
   });
 
   await greeter.deployed();
